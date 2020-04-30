@@ -1,5 +1,4 @@
 import React from 'react'
-import clsx from 'clsx';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 

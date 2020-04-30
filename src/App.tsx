@@ -6,7 +6,6 @@ import Drawer from '@material-ui/core/Drawer';
 import Box from '@material-ui/core/Box';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
@@ -14,18 +13,12 @@ import Badge from '@material-ui/core/Badge';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
-import ListItem from '@material-ui/core/ListItem'
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import MailIcon from '@material-ui/icons/Mail';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import ListItemText from '@material-ui/core/ListItemText';
-
 import SearchIcon from '@material-ui/icons/Search';
 import Meun from './component/Menu';
 import Copyright from './component/Copyright';
+import Account from './component/Account';
 
 const drawerWidth = 240;
 
@@ -177,7 +170,7 @@ function App() {
             <MenuIcon />
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-            fast
+            Fast
           </Typography>
 
           <div className={classes.search}>
@@ -185,7 +178,7 @@ function App() {
               <SearchIcon />
             </div>
             <InputBase
-              placeholder="Search…"
+              placeholder="Search"
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
@@ -198,7 +191,9 @@ function App() {
               <NotificationsIcon />
             </Badge>
           </IconButton>
+          <Account />
         </Toolbar>
+
       </AppBar>
 
       <Drawer
