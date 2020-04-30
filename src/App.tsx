@@ -19,6 +19,12 @@ import SearchIcon from '@material-ui/icons/Search';
 import Meun from './component/Menu';
 import Copyright from './component/Copyright';
 import Account from './component/Account';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import FolderIcon from '@material-ui/icons/Folder';
+import ListItemText from '@material-ui/core/ListItemText';
+import Divider from '@material-ui/core/Divider';
 
 const drawerWidth = 240;
 
@@ -66,6 +72,9 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: 36,
+  },
+  demo: {
+    backgroundColor: theme.palette.background.paper,
   },
   menuButtonHidden: {
     display: 'none',
@@ -145,10 +154,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
+function generate(element: React.ReactElement) {
+  return [0, 1, 2].map((value) =>
+    React.cloneElement(element, {
+      key: value,
+    }),
+  );
+}
 function App() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const [dense, setDense] = React.useState(false);
+  const [secondary, setSecondary] = React.useState(false);
+
   const handleDrawerOpen = () => {
     var status = open;
     setOpen(!status);
@@ -211,29 +229,27 @@ function App() {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
-          <Grid container spacing={3}>
-            {/* Chart */}
-            <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-
-              </Paper>
-            </Grid>
-            {/* Recent Deposits */}
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-
-              </Paper>
-            </Grid>
-            {/* Recent Orders */}
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-
-              </Paper>
-            </Grid>
+          <Typography variant="h6" className={classes.title}>
+            Icon with text
+          </Typography>
+          <Divider />
+          <Grid item xs={12} md={6}>
+            <div className={classes.demo}>
+              <List dense={dense}>
+                {generate(
+                  <ListItem>
+                    <ListItemIcon>
+                      <FolderIcon />
+                    </ListItemIcon>
+                    <ListItemText
+                      primary="Single-line item"
+                      secondary={secondary ? 'Secondary text' : null}
+                    />
+                  </ListItem>,
+                )}
+              </List>
+            </div>
           </Grid>
-          <Box pt={4}>
-            <Copyright />
-          </Box>
         </Container>
       </main>
     </div >
