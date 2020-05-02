@@ -16,7 +16,7 @@ import Paper from '@material-ui/core/Paper';
 import MenuIcon from '@material-ui/icons/Menu';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import SearchIcon from '@material-ui/icons/Search';
-import Meun from './component/Menu';
+import Meun from './components/Menu';
 import Copyright from './components/Copyright';
 import Account from './components/Account';
 import List from '@material-ui/core/List';
