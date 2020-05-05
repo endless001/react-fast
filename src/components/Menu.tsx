@@ -72,8 +72,7 @@ const MainListItems = () => {
     </div>
   )
 }
-class Menu extends React.Component {
-  render = () => {
+const Menu =() => {
     return (
       <div>
         <MainListItems />
@@ -82,5 +81,5 @@ class Menu extends React.Component {
       </div>
     )
   }
-}
+  
 export default Menu

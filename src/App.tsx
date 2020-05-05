@@ -19,6 +19,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import Meun from './components/Menu';
 import Copyright from './components/Copyright';
 import Account from './components/Account';
+import Home from './pages/Home'
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -234,21 +235,7 @@ function App() {
           </Typography>
           <Divider />
           <Grid item xs={12} md={6}>
-            <div className={classes.demo}>
-              <List dense={dense}>
-                {generate(
-                  <ListItem>
-                    <ListItemIcon>
-                      <FolderIcon />
-                    </ListItemIcon>
-                    <ListItemText
-                      primary="Single-line item"
-                      secondary={secondary ? 'Secondary text' : null}
-                    />
-                  </ListItem>,
-                )}
-              </List>
-            </div>
+           <Home/>
           </Grid>
         </Container>
       </main>
