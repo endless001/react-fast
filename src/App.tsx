@@ -16,7 +16,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import SearchIcon from '@material-ui/icons/Search';
 import Meun from './components/Menu';
 import Account from './components/Account';
-import Home from './pages/Home'
+import Home from './views/Home'
 import Divider from '@material-ui/core/Divider';
 
 const drawerWidth = 240;
