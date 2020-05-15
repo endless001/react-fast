@@ -46,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 const SignUp = () => {
   const classes = useStyles();
 
