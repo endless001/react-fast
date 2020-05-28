@@ -4,33 +4,26 @@ import { lazy } from "react";
 
 const routes = [
   {
-    path: "/basic",
+    path: "/",
     component: BasicLayout,
+
     children: [
     ],
   },
   {
     path: "/user",
-    component: BasicLayout,
+    component: UserLayout,
     children: [
       {
-        path: "/user/page1",
+        path: "/user/SignIn",
         component: lazy(() => import("../views/user/SignIn")),
       },
       {
-        path: "/user/page2",
-        component: lazy(() => import("../views/user/SignIn")),
-      },
-      {
-        path: "/user/page3",
-        component: lazy(() => import("../views/user/SignIn")),
-      },
-      { path: "/basic", redirect: "/basic/page1" },
+        path: "/user/SignUp",
+        component: lazy(() => import("../views/user/SignUp")),
+      }
     ],
   },
-  {
-    path: "/",
-    redirect: "/basic",
-  },
+
 ];
 export default routes

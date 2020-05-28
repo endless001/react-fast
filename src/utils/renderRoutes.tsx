@@ -11,7 +11,8 @@ export interface IRouteProps {
 const renderRoutes = (props: IRouteProps) => {
   return (
     <Switch>
-      {props.children &&
+      {
+        props.children &&
         props.children.map((item, index) => {
           if (item.redirect) {
             return (
@@ -38,7 +39,9 @@ const renderRoutes = (props: IRouteProps) => {
               }}
             ></Route>
           );
-        })}
+        })
+      })
+    }
     </Switch>
   );
 };
