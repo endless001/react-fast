@@ -1,71 +1,16 @@
-import * as React from "react";
+import React, { Suspense } from "react";
+import router from "./routes/route";
+import RenderRoutes from "./utils/renderRoutes";
 import { BrowserRouter } from "react-router-dom";
-import { RouteConfig, renderRoutes, RouteConfigComponentProps, MatchedRoute, matchRoutes } from "./routes/index";
 
-const Root = ({ route }: RouteConfigComponentProps) => (
-  <div>
-    <h1>Root</h1>
-    {/* child routes won't render without this */}
-    {renderRoutes(route && route.routes)}
-  </div>
-);
 
-const Home = ({ route }: RouteConfigComponentProps) => (
-  <div>
-    <h2>Home</h2>
-  </div>
-);
-
-const Child = ({ route }: RouteConfigComponentProps<{ id: string }>) => (
-  <div>
-    <h2>Child</h2>
-    {/* child routes won't render without this */}
-    {route && renderRoutes(route.routes, null, {})}
-  </div>
-);
-
-const GrandChild = () => (
-  <div>
-    <h3>Grand Child</h3>
-  </div>
-);
-
-// route config
-const routes: RouteConfig[] = [
-  {
-    component: Root,
-    routes: [
-      {
-        path: "/",
-        exact: true,
-        component: Home
-      },
-      {
-        path: "/child/:id",
-        component: Child,
-        routes: [{
-          path: "/child/:id/grand-child",
-          component: GrandChild
-        }],
-        loadData: () => Promise.resolve({})
-      }
-    ]
-  }
-];
-
-const branch: Array<MatchedRoute<{}>> = matchRoutes<{}>(routes, "/child/23");
-// using the routes shown earlier, this returns
-// [
-//   routes[0],
-//   routes[0].routes[1]
-// ]
-
-// pass this into ReactDOM.render
 const App = () => {
   return (
-    <div>
-      <BrowserRouter>{renderRoutes(routes)}</BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Suspense fallback={<div>loading...</div>}>
+        <RenderRoutes children={router}></RenderRoutes>
+      </Suspense>
+    </BrowserRouter>
   )
 }
 
