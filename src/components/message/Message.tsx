@@ -3,9 +3,10 @@ import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
 import { makeStyles, Theme } from '@material-ui/core/styles';
+import { func } from 'prop-types';
 
 function Alert(props: AlertProps) {
-  return <MuiAlert elevation={6} variant="filled" {...props}  />;
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -17,10 +18,11 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-export default function CustomizedSnackbars() {
+
+
+function CustomizedSnackbars() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-
   const handleClick = () => {
     setOpen(true);
   };
@@ -33,7 +35,7 @@ export default function CustomizedSnackbars() {
     setOpen(false);
   };
 
-  return(
+  return (
     <div className={classes.root}>
       <Button variant="outlined" onClick={handleClick}>
         Open success snackbar
@@ -46,3 +48,5 @@ export default function CustomizedSnackbars() {
     </div >
   );
 }
+
+export default { CustomizedSnackbars };

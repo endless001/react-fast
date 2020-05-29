@@ -12,7 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import Message from '../../components/message/Message';
+import message from '../../components/message/Message';
 import Alert from '@material-ui/lab/Alert';
 
 
@@ -51,7 +51,9 @@ const useStyles = makeStyles((theme) => ({
 
 const SignIn = () => {
   const classes = useStyles();
-
+  const handleClick = () => {
+    message.CustomizedSnackbars();
+  }
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -115,6 +117,10 @@ const SignIn = () => {
       <Box mt={8}>
         <Copyright />
       </Box>
+      <Button variant="outlined" onClick={handleClick}>
+        Open success snackbar
+      </Button>
+
     </Container>
   );
 }
