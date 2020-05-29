@@ -10,7 +10,7 @@ const routes = [
     children: [
       {
         path: "/user/signin",
-        component: lazy(() => import("../views/user/SignUp")),
+        component: lazy(() => import("../views/user/SignIn")),
       },
       {
         path: "/user/signup",
@@ -22,6 +22,10 @@ const routes = [
     path: "/",
     component: BasicLayout,
     children: [
+      {
+        path: "/1",
+        component: lazy(() => import("../views/user/SignUp")),
+      }
     ],
   },
 
