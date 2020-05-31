@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
@@ -22,10 +23,10 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 function CustomizedSnackbars() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-  const handleClick = () => {
-    setOpen(true);
-  };
+  const [open, setOpen] = React.useState(true);
+  const open1 =()=>{
+     
+  }
 
   const handleClose = (event?: React.SyntheticEvent, reason?: string) => {
     if (reason === 'clickaway') {
@@ -37,9 +38,7 @@ function CustomizedSnackbars() {
 
   return (
     <div className={classes.root}>
-      <Button variant="outlined" onClick={handleClick}>
-        Open success snackbar
-      </Button>
+  
       <Snackbar open={open} autoHideDuration={2000} onClose={handleClose} anchorOrigin={{ vertical: 'top', horizontal: 'right' }}	>
         <Alert onClose={handleClose} severity="success">
           This is a success message!
@@ -49,4 +48,15 @@ function CustomizedSnackbars() {
   );
 }
 
-export default { CustomizedSnackbars };
+let div = document.createElement('div');
+let props = {
+   
+};
+document.body.appendChild(div);
+ 
+let Box = ReactDOM.render(React.createElement(
+  CustomizedSnackbars,
+  props
+),div);
+
+export default Box;

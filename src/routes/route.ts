@@ -23,10 +23,14 @@ const routes = [
     component: BasicLayout,
     children: [
       {
-        path: "/1",
+        path: "/",
         component: lazy(() => import("../views/user/SignUp")),
       }
     ],
+  },
+  {
+    path: "*",
+    component: '<div>404</div>'
   },
 
 ];

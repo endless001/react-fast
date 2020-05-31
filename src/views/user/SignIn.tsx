@@ -13,7 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import message from '../../components/message/Message';
-import Alert from '@material-ui/lab/Alert';
+
 
 
 const Copyright = () => {
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
 const SignIn = () => {
   const classes = useStyles();
   const handleClick = () => {
-    message.CustomizedSnackbars();
+    
   }
   return (
     <Container component="main" maxWidth="xs">
