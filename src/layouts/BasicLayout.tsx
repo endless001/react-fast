@@ -1,5 +1,6 @@
 import * as React from "react";
-import RenderRoutes, { IRouteProps } from "../utils/renderRoutes";
+import { IRouteProps } from '../types/index'
+import RenderRoutes from "../utils/renderRoutes";
 import clsx from 'clsx';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';

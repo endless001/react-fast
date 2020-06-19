@@ -1,12 +1,6 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
-
-export interface IRouteProps {
-  path?: string;
-  redirect?: string;
-  component?: any;
-  children?: IRouteProps[];
-}
+import {IRouteProps} from '../types/index'
 
 const renderRoutes = (props: IRouteProps) => {
   return (
@@ -40,8 +34,7 @@ const renderRoutes = (props: IRouteProps) => {
             ></Route>
           );
         })
-      })
-    }
+      })y
     </Switch>
   );
 };

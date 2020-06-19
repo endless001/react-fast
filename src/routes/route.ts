@@ -1,9 +1,9 @@
 import BasicLayout from '../layouts/BasicLayout'
 import UserLayout from '../layouts/UserLayout'
 import { lazy } from "react";
+import {IRouteProps} from '../types/index'
 
-const routes = [
-
+const routes:IRouteProps[] = [
   {
     path: "/user",
     component: UserLayout,
@@ -30,7 +30,7 @@ const routes = [
   },
   {
     path: "*",
-    component: '<div>404</div>'
+    component: lazy(() => import("../views/404")),
   },
 
 ];
