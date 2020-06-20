@@ -117,10 +117,6 @@ const SignIn = () => {
       <Box mt={8}>
         <Copyright />
       </Box>
-      <Button variant="outlined" onClick={handleClick}>
-        Open success snackbar
-      </Button>
-
     </Container>
   );
 }
