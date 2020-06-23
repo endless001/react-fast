@@ -12,9 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import {Alert} from '../../components/alert/Alert';
-import { alertService } from '../../services/alert.service';
-
+ 
 
 const Copyright = () => {
   return (
@@ -116,9 +114,7 @@ const SignIn = () => {
         </form>
       </div>
       <Box mt={8}>
-    
-      <button className="btn btn-success m-1" onClick={() => alertService.success('Success!!', { id: 'left-alert' })}>Success</button>
-        <Copyright />
+      <Copyright />
       </Box>
     </Container>
   );
