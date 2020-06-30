@@ -10,11 +10,11 @@ const routes:IRouteProps[] = [
     children: [
       {
         path: "/user/signin",
-        component: lazy(() => import("../views/user/SignIn")),
+        component: lazy(() => import("../pages/user/SignIn")),
       },
       {
         path: "/user/signup",
-        component: lazy(() => import("../views/user/SignUp")),
+        component: lazy(() => import("../pages/user/SignUp")),
       }
     ],
   },
@@ -24,13 +24,13 @@ const routes:IRouteProps[] = [
     children: [
       {
         path: "/",
-        component: lazy(() => import("../views/user/SignUp")),
+        component: lazy(() => import("../pages/user/SignUp")),
       }
     ],
   },
   {
     path: "*",
-    component: lazy(() => import("../views/404")),
+    component: lazy(() => import("../pages/404")),
   },
 
 ];
