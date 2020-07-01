@@ -13,8 +13,7 @@ import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles({
     table: {
-        minWidth: 650,
-        border: 0,
+        minWidth: 650
     },
 });
 
@@ -30,7 +29,7 @@ const rows = [
     createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-export default function Customer() {
+export default function Index() {
     const classes = useStyles();
 
     return (
