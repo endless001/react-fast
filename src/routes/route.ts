@@ -1,7 +1,7 @@
 import BasicLayout from '../layouts/BasicLayout'
 import UserLayout from '../layouts/UserLayout'
 import { lazy } from "react";
-import {IRouteProps} from '../types/index'
+import {IRouteProps} from './index'
 
 const routes:IRouteProps[] = [
   {

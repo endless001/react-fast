@@ -1,6 +1,6 @@
 import * as React from "react";
-import {IRouteProps} from '../types/index'
-import RenderRoutes from "../utils/renderRoutes";
+import {IRouteProps} from '../routes'
+import RenderRoutes from "../routes/renderRoutes";
 import { History } from "history";
 
 interface ILayoutProps extends IRouteProps {

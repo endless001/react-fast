@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import route from "./routes/route";
-import RenderRoutes from "./utils/renderRoutes";
+import RenderRoutes from "./routes/renderRoutes";
 import { BrowserRouter } from "react-router-dom";
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';

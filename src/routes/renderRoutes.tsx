@@ -1,6 +1,6 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
-import {IRouteProps} from '../types/index'
+import {IRouteProps} from './index'
 
 const renderRoutes = (props: IRouteProps) => {
   return (
