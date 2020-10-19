@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -15,6 +16,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
   }),
 );
+    
 const App = () => {
   const classes = useStyles();
 

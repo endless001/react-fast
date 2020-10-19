@@ -11,7 +11,7 @@ export const register=(request :any)=> {
     };
     return fetch(REGISTER_API_ENDPOINT, parameters)
         .then(response => {
-            return response.json();
+            return response;
         })
         .then(json => {
             return json;
@@ -28,11 +28,11 @@ export const login = (request:any) => {
         body: JSON.stringify(request)
     };
 
-    return fetch(LOGIN_API_ENDPOINT, parameters)
-        .then(response => {
-            return response.json();
+    return  fetch(LOGIN_API_ENDPOINT, parameters)
+        .then(response  =>  {
+            return   response;
         })
         .then(json => {
             return json;
         });
-};
+}; 

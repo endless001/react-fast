@@ -24,7 +24,7 @@ const routes:IRouteProps[] = [
     children: [
       {
         path: "/",
-        component: lazy(() => import("../pages/home/Index")),
+            component: lazy(() => import("../pages/home/Index")),
       }
     ],
   },

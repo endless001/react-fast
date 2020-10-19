@@ -13,6 +13,8 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { login } from '../../services/userService'
+import { useAlert } from 'react-alert'
+
 
 const Copyright = () => {
   return (
@@ -47,7 +49,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SignIn = () => {
+const  SignIn = () => {
+    const alert = useAlert();
     const classes = useStyles();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -56,8 +59,17 @@ const SignIn = () => {
             username: username,
             password: password
         }
-        
+
+        if (!user.username) {
+            alert.error('用户名不能为空!')
+            return;
+        }
+        if (!user.password) {
+            alert.error('密码不能为空!')
+            return;
+        }
         var result = login(user);
+        console.log(result);
       
   }
   return (
@@ -90,11 +102,11 @@ const SignIn = () => {
             fullWidth
             name="password"
             label="Password"
-            type="password"
-            id="password"
+                      type="password"
+                      id="password"
                       autoComplete="current-password"
                       onChange={event => setPassword(event.target.value)}
-          />
+         />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
