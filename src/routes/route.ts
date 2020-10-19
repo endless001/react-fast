@@ -1,7 +1,9 @@
 import BasicLayout from '../layouts/BasicLayout'
 import UserLayout from '../layouts/UserLayout'
 import { lazy } from "react";
-import {IRouteProps} from './index'
+import { IRouteProps } from './index'
+import { authenticated } from '../utils/Authenticated'
+
 
 const routes:IRouteProps[] = [
   {
@@ -24,7 +26,7 @@ const routes:IRouteProps[] = [
     children: [
       {
         path: "/",
-            component: lazy(() => import("../pages/home/Index")),
+            component: authenticated(lazy(() => import("../pages/home/Index"))),
       }
     ],
   },
