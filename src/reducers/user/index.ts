@@ -1,19 +1,48 @@
+import { createReducer } from '../../utils';
+import { userConstants } from '../../constants/user';
+import { push } from 'react-router-redux';
+import jwtDecode from 'jwt-decode';
 
-const INITIAL_STATE = {
-    users: {}
+const initialState = {
+    token: null,
+    userName: null,
+    isAuthenticated: false,
+    isAuthenticating: false,
+    statusText: null
 };
 
-const applySetUsers = (state: any, action: any) => ({
-    ...state,
-    users: action.users
-});
+export default createReducer(initialState, {
+    [userConstants.LOGIN_USER_REQUEST]: (state:any, payload:any) => {
+        return Object.assign({}, state, {
+            'isAuthenticating': true,
+            'statusText': null
+        });
+    },
+    [userConstants.LOGIN_USER_SUCCESS]: (state:any, payload:any) => {
+        return Object.assign({}, state, {
+            'isAuthenticating': false,
+            'isAuthenticated': true,
+            'token': payload.token,
+            'userName':"lq",
+            'statusText': 'You have been successfully logged in.'
+        });
 
-export function userReducer(state = INITIAL_STATE, action: any) {
-    switch (action.type) {
-        case "USERS_SET": {
-            return applySetUsers(state, action);
-        }
-        default:
-            return state;
+    },
+    [userConstants.LOGIN_USER_FAILURE]: (state:any, payload:any) => {
+        return Object.assign({}, state, {
+            'isAuthenticating': false,
+            'isAuthenticated': false,
+            'token': null,
+            'userName': null,
+            'statusText': `Authentication Error: ${payload.status} ${payload.statusText}`
+        });
+    },
+    [userConstants.LOGOUT_USER]: (state:any, payload:any) => {
+        return Object.assign({}, state, {
+            'isAuthenticated': false,
+            'token': null,
+            'userName': null,
+            'statusText': 'You have been successfully logged out.'
+        });
     }
-}
+});
