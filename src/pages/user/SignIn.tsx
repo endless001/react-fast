@@ -15,7 +15,6 @@ import Container from '@material-ui/core/Container';
 import { login } from '../../services/userService'
 import { useAlert } from 'react-alert'
 
-
 const Copyright = () => {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -54,6 +53,8 @@ const SignIn: React.FC = () => {
     const classes = useStyles();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+
+
     const handleClick = () => {
         var user={
             username: username,
@@ -68,8 +69,7 @@ const SignIn: React.FC = () => {
             alert.error('密码不能为空!')
             return;
         }
-        var result = login(user);
-        console.log(result);
+     
       
   }
   return (
