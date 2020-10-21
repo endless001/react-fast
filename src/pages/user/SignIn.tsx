@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const  SignIn = () => {
+const SignIn: React.FC = () => {
     const alert = useAlert();
     const classes = useStyles();
     const [username, setUsername] = useState("");

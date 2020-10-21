@@ -4,9 +4,7 @@ import { transitions, positions, Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic'
 import { Provider } from 'react-redux'
 import App from './App';
-import configureStore from './store/configureStore';
-
-
+import store from "./store";
 
 const options = {
     // you can also just use 'bottom center'
@@ -16,14 +14,10 @@ const options = {
     // you can also just use 'scale'
     transition: transitions.SCALE
 }
-const store = (): object => {
-    const store = Object.assign({}, null);
-    return configureStore(store);
-}
 
 ReactDOM.render(
     <React.StrictMode>
-        <Provider store={store()}>
+        <Provider store={store as any}>
             <AlertProvider template={AlertTemplate} {...options}>
               <App  />
             </AlertProvider>

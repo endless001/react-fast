@@ -29,7 +29,7 @@ const rows = [
     createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-export default function Index() {
+const Index: React.FC = () => {
     const classes = useStyles();
 
     return (
@@ -59,3 +59,4 @@ export default function Index() {
         </TableContainer>
     );
 }
+export default Index
