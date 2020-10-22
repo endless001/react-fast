@@ -19,3 +19,4 @@
 [0511/100237.311:ERROR:crash_report_database_win.cc(428)] unexpected header
 [0511/100827.484:ERROR:crash_report_database_win.cc(428)] unexpected header
 [0511/104955.165:ERROR:crash_report_database_win.cc(428)] unexpected header
+[1022/172314.925:ERROR:directory_reader_win.cc(43)] FindFirstFile: 系统找不到指定的路径。 (0x3)

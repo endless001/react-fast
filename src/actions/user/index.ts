@@ -19,8 +19,8 @@ export function loginUserFailure(error: any) {
     return {
         type: userConstants.LOGIN_USER_FAILURE,
         payload: {
-            status: error.response.status,
-            statusText: error.response.statusText
+            status: "11",
+            statusText: "11"
         }
     }
 }

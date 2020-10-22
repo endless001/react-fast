@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SignIn: React.FC = (props) => {
+const SignIn: React.FC = () => {
     const alert = useAlert();
     const classes = useStyles();
     const dispatch = useDispatch();
