@@ -1,7 +1,5 @@
 import { createReducer } from '../../utils';
 import { userConstants } from '../../constants/user';
-import { push } from 'react-router-redux';
-import jwtDecode from 'jwt-decode';
 
 const initialState = {
     token: null,

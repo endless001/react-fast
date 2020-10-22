@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React,{ useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,9 +12,11 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import { login } from '../../services/userService'
 import { useAlert } from 'react-alert'
 
+import * as userActions from '../../actions/user';
+
+import { useDispatch, useSelector } from 'react-redux';
 const Copyright = () => {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -48,15 +50,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SignIn: React.FC = () => {
+const SignIn: React.FC = (props) => {
     const alert = useAlert();
     const classes = useStyles();
+    const dispatch = useDispatch();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-
     const handleClick = () => {
-        var user={
+        var user = {
             username: username,
             password: password
         }
@@ -69,9 +71,10 @@ const SignIn: React.FC = () => {
             alert.error('密码不能为空!')
             return;
         }
+
+        dispatch(userActions.loginUser(username, password, '/'));
      
-      
-  }
+    }
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -140,4 +143,7 @@ const SignIn: React.FC = () => {
     </Container>
   );
 }
-export default SignIn
+
+
+
+export default SignIn;
